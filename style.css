@@ -1,0 +1,281 @@
+/*!
+Theme Name: RenduWP
+Theme URI: http://underscores.me/
+Author: Florian
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: renduwp
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+RenduWP is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ 
+ 
+
+/* Style de base pour les éléments <li> du menu */
+.nav-menu li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    border: 1px solid #333; /* Ajouter une bordure */
+    border-radius: 5px; /* Arrondir les coins de la bordure */
+}
+
+/* Style des liens à l'intérieur des éléments <li> */
+.nav-menu li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-family: Arial, sans-serif; /* Changer la police */
+}
+
+/* Style au survol des liens */
+.nav-menu li a:hover {
+    background-color: #f8f8f8;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* Ajout d'un style pour l'archive revetements */
+ .post-type-archive-revetements .page-header {
+    min-height: 250px;
+    background-color: rgb(50, 107, 205);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-type-archive-revetements .page-header h1 {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 0.2em;
+}
+
+.post-type-archive-revetements .page-header p {
+    font-size: 18px;
+}
+
+.revetements-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1280px;
+    margin: 80px auto;
+    padding-inline: 20px;
+}
+
+.revetements-card {
+    border: 1px solid rgb(123, 123, 123);
+}
+
+.revetements-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.revetements-card__content {
+    padding: 20px;
+}
+
+.revetements-card__content a {
+    display: block;
+    width: 100%;
+    background-color: rgb(50, 107, 205);
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 8px;
+}
+
+.revetements-card__content a:hover {
+    color: white;
+    background-color: rgb(50, 107, 205);
+}
+
+.revetements-card__content a:active {
+    color: #ffffff;
+}
+
+.revetements-card__content a:visited {
+    color: #ffffff;
+}
+
+/* Ajout d'un style pour l'archive bois */
+.post-type-archive-bois .page-header {
+    min-height: 250px;
+    background-color: rgb(50, 107, 205);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-type-archive-bois .page-header h1 {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 0.2em;
+}
+
+.post-type-archive-bois .page-header p {
+    font-size: 18px;
+}
+
+.bois-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1280px;
+    margin: 80px auto;
+    padding-inline: 20px;
+}
+
+.bois-card {
+    border: 1px solid rgb(123, 123, 123);
+}
+
+.bois-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.bois-card__content {
+    padding: 20px;
+}
+
+.bois-card__content a {
+    display: block;
+    width: 100%;
+    background-color: rgb(50, 107, 205);
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 8px;
+}
+
+.bois-card__content a:hover {
+    color: white;
+    background-color: rgb(50, 107, 205);
+}
+
+.bois-card__content a:active {
+    color: #ffffff;
+}
+
+.bois-card__content a:visited {
+    color: #ffffff;
+}
+
+
+/* Styles globaux pour la page single */
+.single-revetements {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Titre de la page */
+.single-revetements h1 {
+    color: #d35400;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Conteneur pour les détails ACF */
+.revetement-details {
+    background-color: #f9f9f9;
+    border-left: 5px solid #d35400;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.revetement-details h2 {
+    margin-top: 0;
+}
+
+/* Styles pour les champs ACF */
+.revetement-details p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.revetement-details p strong {
+    min-width: 100px;
+    color: #555;
+}
